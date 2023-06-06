@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <wrapper>
+        <div class="h-[153vh] flex flex-col items-center bg-gradient-to-br from-cyan-700 to-sky-900">
+            <div class="flex flex-col items-center w-full">
+                <div style="text-shadow:2px 2px rgb(0, 0, 0)" class="p-7 text-white text-center font-extrabold font-mullish text-5xl">WEATHER APP</div>
+                
+                <!-- switch tab  -->
+                <div class=" flex justify-between w-6/12 items-baseline ">
+                    <button class="text-md font-semibold text-white userWeather p-3 py-1 rounded-md hover:pointer hover:text-black/50 ">Your Weather</button>
+                    <button class="text-md font-semibold text-white searchWeather p-3 py-1 rounded-md hover:pointer hover:text-black/50">Search Weather</button>
+                </div>
+            </div>
+
+            <!-- grant location access  -->
+            <div class="accessBlock flex flex-col items-center mt-40 space-y-3 absolute ">
+                <div><img class="h-28 mt-20 mb-10" src="assets/location.png" alt="location" loading="lazy"></div>
+                <div class="text-white text-4xl font-bold">Grant Location Access</div>
+                <div class="text-white text-xl">Allow Acces To Get Weather Information</div>
+                <button class="access-btn text-white text-xl font-semibold translate-y-7 p-3 py-1 bg-white/30 rounded-md  hover:text-black/50">GRANT ACCESS</button>
+            </div>
+
+            <!-- show weather  -->
+            <div class="displayBlock flex flex-col items-center top-[-6%] mt-40 absolute">
+                <div class="flex flex-col items-center">
+                    <div class="flex pt-24 items-center">
+                        <!-- city name  -->
+                        <div class="city text-white mr-6 text-4xl font-semibold"></div>
+                        <!-- flag  -->
+                        <img class="flag h-10" loading="lazy">
+                    </div>
+
+                    <!-- description  -->
+                    <div class="desc text-white text-xl p-3"></div>
+                    <img alt="loading" class="desc-img w-24" loading="lazy">
+                    <!-- temperature  -->
+                    <div class="temp text-white text-4xl font-extrabold"></div>
+                </div>
+
+                <!-- cards  -->
+                <div class="flex justify-between items-center w-[50vw] mt-9 flex-wrap">
+                    <!-- card 1  -->
+                    <div class="flex flex-col items-center justify-center h-36 w-44 text-white p-3 py-1 my-2 bg-white/30 rounded-md">
+                        <img src="assets/wind.png" alt="loading" class="h-14 w-14" loading="lazy">
+                        <div>WINDSPEED</div>
+                        <div w-desc></div>
+                    </div>
+                    <!-- card 2  -->
+                    <div class="flex flex-col items-center justify-center h-36 w-44 text-white p-3 py-1 my-2 bg-white/30 rounded-md">
+                        <img src="assets/humidity.png" alt="loading" class="h-14 w-14" loading="lazy">
+                        <div>HUMIDITY</div>
+                        <div h-desc></div>
+                    </div>
+                    <!-- card 3  -->
+                    <div class="flex flex-col items-center justify-center h-36 w-44 text-white p-3 py-1 my-2 bg-white/30 rounded-md">
+                        <img src="assets/cloud.png" alt="loading" class="h-14 w-20" loading="lazy">
+                        <div>CLOUDS</div>
+                        <div c-desc></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- loading gif -->
+            <img src="assets/loading.gif" alt="loading..." class="gifBlock h-96 w-96" loading="lazy">
+
+            <!-- search weather  -->
+            <div class="searchBlock absolute flex top-[24%]">
+                <div class="w-[50vw]">
+                    <form class="searchForm flex justify-center space-x-2">
+                        <input placeholder="Search for City..." class="bg-white/30  placeholder-white font-semibold text-lg pl-3 p-1 w-[700px] rounded-lg" data-searchInput >
+                        <button class="btn" type="submit">
+                            <img src="./assets/search.png"  width="28" height="28" loading="lazy">
+                        </button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </wrapper>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+.currentTab{
+    background: rgba(255, 255, 255, .3);
+}
+
+.hidden{
+    display:none;
+}
+
+/* .displayBlock{
+    display:none;
+} */
